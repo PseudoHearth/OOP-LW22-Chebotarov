@@ -1,0 +1,39 @@
+﻿<Window x:Class="Wpftutorialsamples.Rich_text_controls.Richtexteditorsample"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+Title="Richtexteditorsample" Height="300" Width="400">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="Open_Executed" />
+        <CommandBinding Command="ApplicationCommands.Save" Executed="Save_Executed" />
+    </Window.CommandBindings>
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Command="ApplicationCommands.Open">
+                <Image Source="/Wpftutorialsamples;component/Images/folder.png"
+Width="16"
+Height="16" />
+            </Button>
+            <Button Command="ApplicationCommands.Save">
+                <Image Source="/Wpftutorialsamples;component/Images/disk.png"
+Width="16"
+Height="16" />
+            </Button>
+            <Separator />
+            <ToggleButton Command="EditingCommands.ToggleBold" Name="btnbold">
+                <Image Source="C:\Users\админ\Pictures\trait_icon_masterbro.png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnitalic">
+                <Image Source="C:\Users\админ\Pictures\trait_icon_masterbro.png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnunderline">
+                <Image Source="C:\Users\админ\Pictures\trait_icon_masterbro.png" Width="16" Height="16" />
+            </ToggleButton>
+            <Separator />
+            <ComboBox Name="cmbFontFamily" Width="150"
+SelectionChanged="cmbfontfamily_Selectionchanged" />
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True"
+TextBoxBase.TextChanged="cmbfontsize_Textchanged" />
+        </ToolBar>
+        <RichTextBox Name="rtbeditor" SelectionChanged="rtbeditor_SelectionChanged" />
+    </DockPanel>
+</Window>
